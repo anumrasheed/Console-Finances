@@ -89,4 +89,21 @@ var finances = [
 
 
 var TotalMonths = finances.length;
-console.log(`${TotalMonths}`);
+console.log(`Total Months: ${TotalMonths}`);
+
+let NetProfitloss = 0;
+let ProfitLoss1 = 0;
+
+for (let f = 0; f < finances.length; f++)
+{
+  // console.log(`f1 ${finances[f][1]}`);
+
+  NetProfitloss = ProfitLoss1 + finances[f][1];
+  ProfitLoss1 = NetProfitloss
+  
+   
+
+}
+
+
+console.log(`Total: ${NetProfitloss}`);
