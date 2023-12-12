@@ -108,18 +108,13 @@ console.log(`Total: ${NetProfitloss}`);
 // The average of the changes in Profit/Losses over the entire period.
 
 
-// let fin = [
-//   ["ab",2],
-//   ["cd",3],
-//   ["ef",4],
-//   ["gh",5],
-//   ["ij",6]
-// ];
 let nextvalue = 0;
 let previousvalue = 0;
 let diff = 0;
 let diff1 = 0;
 let totaldiff= 0;
+let bigdiff= ["",0];
+let lowdiff= ["",0];
 for (let f = 1; f < finances.length; f++)
 {
   
@@ -135,10 +130,23 @@ for (let f = 1; f < finances.length; f++)
       diff = nextvalue - previousvalue;
       totaldiff=diff+diff1;
       diff1 = totaldiff;
+
+      if (diff>bigdiff[1])
+      {
+        bigdiff=[finances[f][0],diff];
+      }
+      if (diff<lowdiff[1])
+      {
+        lowdiff=[finances[f][0],diff];
+      }
+
+      
+
+
       
 
   
-    //   console.log(`diff${diff}`);
+    //  console.log(`diff${diff}`);
 
     // console.log(`totaldiff${totaldiff}`);
 
@@ -148,4 +156,7 @@ let avgchange = 0;
 avgchange = totaldiff/(TotalMonths-1);
 
 console.log(`avgchange: ${avgchange}`);
+
+console.log(`Greatest Increase in Profits/Losses: ${bigdiff}`);
+      console.log(`Greatest Decrease in Profits/Losses:${lowdiff}`);
 
