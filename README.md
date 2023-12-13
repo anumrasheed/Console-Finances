@@ -14,7 +14,7 @@
 ## Usage
 -  The data is visible in console of the browser with each label showing respective values
 -  Below is the screenshot of the application
--  ![wireframe](assets/images/bootstrap-portfolio-console-finances-screenshot.png)
+-  ![application screenshot](assets/images/bootstrap-portfolio-console-finances screenshot.png)
 
 ## License
 
