@@ -97,8 +97,7 @@ console.log(`Total Months: ${TotalMonths}`);
 let NetProfitloss = 0;
 let ProfitLoss1 = 0;
 
-for (let f = 0; f < finances.length; f++)
-{
+for (let f = 0; f < finances.length; f++) {
   NetProfitloss = ProfitLoss1 + finances[f][1];
   ProfitLoss1 = NetProfitloss
 }
@@ -106,57 +105,39 @@ for (let f = 0; f < finances.length; f++)
 console.log(`Total: ${NetProfitloss}`);
 
 // The average of the changes in Profit/Losses over the entire period.
+//greatest increase and decrease in change
 
 
 let nextvalue = 0;
 let previousvalue = 0;
 let diff = 0;
 let diff1 = 0;
-let totaldiff= 0;
-let bigdiff= ["",0];
-let lowdiff= ["",0];
-for (let f = 1; f < finances.length; f++)
-{
-  
-        nextvalue = finances[f][1];
-      
-      
+let totaldiff = 0;
+let bigdiff = ["", 0];
+let lowdiff = ["", 0];
+for (let f = 1; f < finances.length; f++) {
 
-    previousvalue = finances[f-1][1];
-    // console.log(`previousvalue${previousvalue}`);
-    // console.log(`nextvalue${nextvalue}`);
-    
-      
-      diff = nextvalue - previousvalue;
-      totaldiff=diff+diff1;
-      diff1 = totaldiff;
+  nextvalue = finances[f][1];
 
-      if (diff>bigdiff[1])
-      {
-        bigdiff=[finances[f][0],diff];
-      }
-      if (diff<lowdiff[1])
-      {
-        lowdiff=[finances[f][0],diff];
-      }
-
-      
+  previousvalue = finances[f - 1][1];
 
 
-      
+  diff = nextvalue - previousvalue;
+  totaldiff = diff + diff1;
+  diff1 = totaldiff;
 
-  
-    //  console.log(`diff${diff}`);
+  if (diff > bigdiff[1]) {
+    bigdiff = [finances[f][0], diff];
+  }
+  if (diff < lowdiff[1]) {
+    lowdiff = [finances[f][0], diff];
+  }
 
-    // console.log(`totaldiff${totaldiff}`);
-
-  
 }
 let avgchange = 0;
-avgchange = totaldiff/(TotalMonths-1);
+avgchange = totaldiff / (TotalMonths - 1);
 
-console.log(`avgchange: ${avgchange}`);
+console.log(`Average change: ${avgchange}`);
 
 console.log(`Greatest Increase in Profits/Losses: ${bigdiff}`);
-      console.log(`Greatest Decrease in Profits/Losses:${lowdiff}`);
-
+console.log(`Greatest Decrease in Profits/Losses: ${lowdiff}`);
