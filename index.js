@@ -106,7 +106,7 @@ for (let f = 0; f < finances.length; f++) {
   ProfitLoss1 = NetProfitloss
 }
 
-console.log(`Total: ${NetProfitloss}`);
+console.log(`Total: $${NetProfitloss}`);
 
 // The average of the changes in Profit/Losses over the entire period.
 //greatest increase and decrease in change
@@ -139,7 +139,7 @@ for (let f = 1; f < finances.length; f++) {
 
 }
 let avgchange = 0;
-avgchange = totaldiff / (TotalMonths - 1);
+avgchange = (totaldiff / (TotalMonths - 1)).toFixed(2);
 
 console.log(`Average change: ${avgchange}`);
 
